@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar.jsx";
 import MainContent from "./data/MainContent";
 
 function App() {
