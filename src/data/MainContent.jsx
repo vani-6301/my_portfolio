@@ -35,10 +35,10 @@ function MainContent() {
             title: "Web Applications",
             projects: [
                 {
-                    title: "Client Project – Procurement System",
-                    tech: ["ReactJS", "NodeJS", "MongoDB", "JavaScript", "CSS"],
+                    title: "MERN Procurement System",
+                    tech: ["React", "Node", "Express", "MongoDB"],
                     description:
-                        "Developed and implemented a full-stack procurement system to streamline purchasing workflows including requisitions, order creation, supplier management, and invoice processing."
+                        "Enterprise workflow system with multi-stage approvals and dashboards for managing procurement requests."
                 },
                 {
                     title: "Company Internal Project – Feedback Web App",
@@ -88,7 +88,7 @@ function MainContent() {
 
                 <div className="text-[16px] text-[#547792] text-center mt-2">
                     <p>Frontend Developer building modern React applications.</p>
-                    <p>Currently expanding into Full-Stack development with Node.js & MongoDB.</p>
+                    <p>Currently expanding into full-stack development with the MERN stack.</p>
                 </div>
 
                 <div className="flex justify-center gap-8 mt-6">
