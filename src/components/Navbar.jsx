@@ -1,11 +1,18 @@
-import React from 'react';
-import { HouseLineIcon, LinkedinLogoIcon, GithubLogoIcon } from "@phosphor-icons/react";
+import React, { useState } from 'react';
+import {
+    LinkedinLogoIcon,
+    GithubLogoIcon,
+    List,
+    X
+} from "@phosphor-icons/react";
+
 import girl from "../assets/girl.png";
 
 function Navbar() {
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const menuItems = [
-        // { name: "About Me", link: "#top" }, 
         { name: "Skills", link: "#skills" },
         { name: "Experience", link: "#experience" },
         { name: "Projects", link: "#projects" },
@@ -13,54 +20,130 @@ function Navbar() {
     ];
 
     return (
-        <div className='fixed top-0 w-full bg-gradient-to-b from-[#EFF6FF] to-[#ffffff] p-4 flex items-center justify-between text-[#0245A3] z-50'>
+        <nav className="fixed top-0 left-0 w-full bg-gradient-to-b from-[#EFF6FF] to-white text-[#0245A3] z-50 shadow-sm">
 
-            {/* Logo */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
 
-            <a href="#top" className='flex gap-2 items-center font-semibold'>
-                <img src={girl} alt="Vanishree logo" className="w-10 h-10 ml-5 object-contain" />
-                <div></div>
-            </a>
+                {/* Logo */}
+                <a href="#top" className="flex items-center gap-2">
+                    <img
+                        src={girl}
+                        alt="Vanishree logo"
+                        className="w-10 h-10 object-contain"
+                    />
+                </a>
 
-            {/* Menu */}
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center gap-8 text-[17px] font-medium">
 
-            <div className='flex items-center gap-6 text-[18px]'>
+                    {menuItems.map((item, index) => (
+                        <a
+                            key={index}
+                            href={item.link}
+                            className="hover:text-blue-600 transition duration-200"
+                        >
+                            {item.name}
+                        </a>
+                    ))}
 
-                {menuItems.map((item, index) => (
+                </div>
+
+                {/* Desktop Social Icons */}
+                <div className="hidden md:flex items-center gap-4">
+
                     <a
-                        key={index}
-                        href={item.link}
-                        className="cursor-pointer hover:text-blue-600 transition"
+                        href="https://www.linkedin.com/in/vanishree6301/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:scale-110 transition"
                     >
-                        {item.name}
+                        <LinkedinLogoIcon
+                            size={30}
+                            color="#0245a3"
+                            weight="fill"
+                        />
                     </a>
-                ))}
+
+                    <a
+                        href="https://github.com/vani-6301"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:scale-110 transition"
+                    >
+                        <GithubLogoIcon
+                            size={30}
+                            color="#0245a3"
+                            weight="fill"
+                        />
+                    </a>
+
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    {menuOpen ? (
+                        <X size={30} weight="bold" />
+                    ) : (
+                        <List size={30} weight="bold" />
+                    )}
+                </button>
 
             </div>
 
-            {/* Social Links */}
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className="md:hidden bg-white shadow-md px-6 py-5">
 
-            <div className="flex items-center gap-4">
+                    <div className="flex flex-col gap-5 text-center text-[17px] font-medium">
 
-                <a
-                    href="https://www.linkedin.com/in/vanishree6301/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <LinkedinLogoIcon size={32} color="#0245a3" weight="fill" />
-                </a>
+                        {menuItems.map((item, index) => (
+                            <a
+                                key={index}
+                                href={item.link}
+                                onClick={() => setMenuOpen(false)}
+                                className="hover:text-blue-600 transition"
+                            >
+                                {item.name}
+                            </a>
+                        ))}
 
-                <a
-                    href="https://github.com/vani-6301"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <GithubLogoIcon size={32} color="#0245a3" weight="fill" />
-                </a>
+                        {/* Mobile Social Icons */}
+                        <div className="flex justify-center gap-5 pt-2">
 
-            </div>
+                            <a
+                                href="https://www.linkedin.com/in/vanishree6301/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <LinkedinLogoIcon
+                                    size={30}
+                                    color="#0245a3"
+                                    weight="fill"
+                                />
+                            </a>
 
-        </div>
+                            <a
+                                href="https://github.com/vani-6301"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <GithubLogoIcon
+                                    size={30}
+                                    color="#0245a3"
+                                    weight="fill"
+                                />
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            )}
+        </nav>
     );
 }
 

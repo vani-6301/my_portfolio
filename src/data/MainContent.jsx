@@ -75,34 +75,34 @@ function MainContent() {
     ];
 
     return (
-        <div className="flex flex-col items-center w-full pt-20">
+        <div className="flex flex-col items-center w-full pt-24 px-4 sm:px-6">
 
             {/* HERO / ABOUT SECTION */}
 
             <div className="flex flex-col items-center scroll-mt-24">
 
-                <div className="flex justify-center items-center gap-4 text-[38px] font-bold text-[#1A3263]">
+                <div className="flex flex-wrap justify-center items-center gap-3 text-3xl sm:text-4xl md:text-[38px] font-bold text-[#1A3263] text-center">
                     <span>Hi, I’m Vanishree</span>
                     <HandWavingIcon size={40} color="#FAB95B" weight="fill" className="wave" />
                 </div>
 
-                <div className="text-[16px] text-[#547792] text-center mt-2">
+                <div className="text-sm sm:text-base text-[#547792] text-center mt-2 max-w-2xl">
                     <p>Frontend Developer building modern React applications.</p>
                     <p>Currently expanding into full-stack development with the MERN stack.</p>
                 </div>
 
-                <div className="flex justify-center gap-8 mt-6">
+                <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mt-6 w-full sm:w-auto">
 
                     <a
                         href="#contact"
-                        className="px-5 py-2 bg-[#1A3263] text-white rounded-lg hover:bg-[#16264d] transition"
+                        className="px-5 py-3 text-center bg-[#1A3263] text-white rounded-lg hover:bg-[#16264d] transition"
                     >
                         Get In Touch
                     </a>
 
                     <a
                         href="#projects"
-                        className="px-5 py-2 border border-[#1A3263] text-[#1A3263] rounded-lg hover:bg-[#1A3263] hover:text-white transition"
+                        className="px-5 py-3 text-center border border-[#1A3263] text-[#1A3263] rounded-lg hover:bg-[#1A3263] hover:text-white transition"
                     >
                         Projects
                     </a>
@@ -114,13 +114,13 @@ function MainContent() {
 
             {/* SKILLS */}
 
-            <div id="skills" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
+            <div id="skills" className="flex items-center my-10 w-full max-w-5xl scroll-mt-24 px-2">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-xl text-[#1A3263]">Skills</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Skills</div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
-            <div className="max-w-4xl w-full space-y-10">
+            <div className="max-w-5xl w-full space-y-8">
 
                 <SkillSection title="Frontend" skills={frontendSkills} color="hover:shadow-blue-200" font="text-[#5459AC]" />
 
@@ -135,7 +135,7 @@ function MainContent() {
 
             <div id="experience" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-xl text-[#1A3263]">Experience</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Experience</div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
@@ -194,7 +194,7 @@ function MainContent() {
 
             <div id="projects" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-xl text-[#1A3263]">Projects</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Projects</div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
@@ -227,7 +227,7 @@ function MainContent() {
 
             <div id="contact" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-xl text-[#1A3263]">Get In Touch</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Get In Touch</div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
@@ -314,7 +314,7 @@ function SkillCard({ name, color, font }) {
         <div className={`px-5 py-3 bg-white rounded-xl border border-gray-200
         shadow-sm cursor-pointer transition-all duration-300 ease-in-out
         hover:-translate-y-1 hover:scale-105 hover:shadow-lg ${color} hover:font-bold`}>
-            <span className={`text-sm font-medium ${font}`}>
+            <span className={`text-xs sm:text-sm font-medium ${font}`}>
                 {name}
             </span>
         </div>
