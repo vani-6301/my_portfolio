@@ -144,7 +144,7 @@ function MainContent() {
                 <div className="mb-8">
                     <h3 className="text-xl font-bold text-[#1A3263]">LMG 8 Tech</h3>
                     <p className="text-[#5459AC] font-medium">Front-End Developer</p>
-                    <p className="text-sm text-gray-500">Feb 2024 – Present</p>
+                    <p className="text-sm text-gray-500">Feb 2024 – Apr 2026</p>
                 </div>
 
                 <div className="relative">
