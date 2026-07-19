@@ -3,7 +3,7 @@ import MainContent from "./data/MainContent";
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#F2FCFC] flex flex-col items-center justify-start">
+        <div className="min-h-screen bg-[#0f0814] flex flex-col items-center justify-start">
             <Navbar />
             <MainContent />
         </div>

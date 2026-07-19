@@ -1,76 +1,131 @@
 import { HandWavingIcon } from "@phosphor-icons/react";
 import "../styles/MainContent.css";
 import resume from "../files/Vanishree_Resume.pdf";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import {
+    FaReact,
+    FaHtml5,
+    FaCss3Alt,
+    FaNodeJs,
+    FaGitAlt,
+    FaGithub,
+    FaFigma
+} from "react-icons/fa";
+
+import {
+    SiJavascript,
+    SiRedux,
+    SiReactrouter,
+    SiTailwindcss,
+    SiExpress,
+    SiMongodb,
+    SiPostman,
+    SiNpm,
+    SiAxios,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import {
+    TbApi,
+    TbBrandChrome,
+    TbShieldLock
+} from "react-icons/tb";
+
 function MainContent() {
 
-    const frontendSkills = ["React", "Redux", "JavaScript", "HTML", "CSS", "Tailwind"];
-    const backendSkills = ["Node.js", "Express", "MongoDB"];
-    const toolsSkills = ["Git", "GitHub", "Postman", "VS Code"];
+    const frontendSkills = [
+        { name: "React", icon: <FaReact /> },
+        { name: "JavaScript", icon: <SiJavascript /> },
+        { name: "React Hooks", icon: <FaReact /> },
+        { name: "Redux", icon: <SiRedux /> },
+        { name: "Context API", icon: <FaReact /> },
+        { name: "React Router", icon: <SiReactrouter /> },
+        { name: "REST APIs", icon: <TbApi /> },
+        { name: "Axios", icon: <SiAxios /> },
+        { name: "HTML5", icon: <FaHtml5 /> },
+        { name: "CSS3", icon: <FaCss3Alt /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+        { name: "Material UI", icon: <MdOutlineDashboardCustomize /> },
+    ];
+
+    const backendSkills = [
+        { name: "Node.js", icon: <FaNodeJs /> },
+        { name: "Express.js", icon: <SiExpress /> },
+        { name: "MongoDB", icon: <SiMongodb /> },
+        { name: "JWT Authentication", icon: <TbShieldLock /> },
+    ];
+    const toolsSkills = [
+        { name: "Git", icon: <FaGitAlt /> },
+        { name: "GitHub", icon: <FaGithub /> },
+        { name: "VS Code", icon: <VscVscode /> },
+        { name: "Postman", icon: <SiPostman /> },
+        { name: "DevTools", icon: <TbBrandChrome /> },
+        { name: "npm", icon: <SiNpm /> },
+        { name: "Figma", icon: <FaFigma /> },
+    ];
+
 
     const journey = [
         {
             icon: "⚛",
             title: "Frontend Development",
             points: [
-                "Built responsive dashboards",
-                "Integrated REST APIs",
-                "Developed reusable components"
+                "Developed React-based enterprise web applications",
+                "Built responsive and reusable UI components",
+                "Integrated REST APIs and collaborated with backend teams",
+                "Worked with clients to understand requirements and deliver features"
             ],
-            tech: ["React", "Tailwind", "ApexCharts"]
+            tech: [
+                "React",
+                "JavaScript",
+                "Tailwind CSS",
+                "REST APIs"
+            ]
         },
         {
-            icon: "🛠",
-            title: "Expanding to Full-Stack",
+            icon: "🚀",
+            title: "Expanding into full stack Development",
             points: [
-                "Learning Node.js",
-                "Building REST APIs",
-                "Working with MongoDB"
+                "Contributed to backend development using Node.js and Express.js",
+                "Worked with MongoDB for application data",
+                "Collaborated on full stack application development",
+                "Continuously building MERN Stack expertise through hands-on projects"
             ],
-            tech: ["Node.js", "Express", "MongoDB"]
+            tech: [
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "MERN Stack"
+            ]
         }
     ];
 
-    const projectSections = [
+    const projects = [
         {
-            title: "Web Applications",
-            projects: [
-                {
-                    title: "MERN Procurement System",
-                    tech: ["React", "Node", "Express", "MongoDB"],
-                    description:
-                        "Enterprise workflow system with multi-stage approvals and dashboards for managing procurement requests."
-                },
-                {
-                    title: "Company Internal Project – Feedback Web App",
-                    tech: ["ReactJS", "JavaScript", "CSS"],
-                    description:
-                        "Built a responsive internal feedback management application featuring an admin portal for handling project details, questionnaires, and automated notifications."
-                }
-            ]
+            title: "MERN Procurement System",
+            tech: ["React", "Node.js", "Express.js", "MongoDB"],
+            description:
+                "Contributed to the development of a procurement management system by building React interfaces, integrating REST APIs, collaborating on backend features, and implementing approval workflow modules."
         },
+
         {
-            title: "Websites",
-            projects: [
-                {
-                    title: "Company Internal Project – Official Website",
-                    tech: ["ReactJS", "JavaScript", "CSS"],
-                    description:
-                        "Developed responsive and SEO-friendly business websites ensuring performance optimization, accessibility, and smooth cross-device compatibility.",
-                    link: "https://www.lmg8.tech/"
-                }
-            ]
+            title: "Internal Feedback Management System",
+            tech: ["React", "JavaScript", "REST APIs"],
+            description:
+                "Developed responsive frontend features, integrated APIs, and collaborated with the team to build an internal feedback platform with project management and notification modules."
         },
+
         {
-            title: "E-Commerce",
-            projects: [
-                {
-                    title: "Myhraki – E-commerce Platform",
-                    tech: ["ReactJS", "JavaScript", "CSS"],
-                    description:
-                        "Developed a dynamic e-commerce platform enabling sellers to upload and manage boutique products with dashboards and logistics modules.",
-                    link: "https://myhraki.com/"
-                }
-            ]
+            title: "LMG8 Corporate Website",
+            tech: ["React", "JavaScript", "Responsive Design"],
+            description:
+                "Developed responsive business website pages with a focus on performance, accessibility, and cross-device compatibility."
+        },
+
+        {
+            title: "Myhraki E-Commerce Platform",
+            tech: ["React", "JavaScript", "REST APIs"],
+            description:
+                "Contributed to the frontend development of an e-commerce platform by building responsive interfaces and integrating APIs for seller and product management."
         }
     ];
 
@@ -81,31 +136,42 @@ function MainContent() {
 
             <div className="flex flex-col items-center scroll-mt-24">
 
-                <div className="flex flex-wrap justify-center items-center gap-3 text-3xl sm:text-4xl md:text-[38px] font-bold text-[#1A3263] text-center">
+                <div className="flex flex-wrap justify-center items-center gap-3 text-3xl sm:text-4xl md:text-[38px] font-bold text-white text-center">
                     <span>Hi, I’m Vanishree</span>
                     <HandWavingIcon size={40} color="#FAB95B" weight="fill" className="wave" />
                 </div>
 
-                <div className="text-sm sm:text-base text-[#547792] text-center mt-2 max-w-2xl">
-                    <p>Frontend Developer building modern React applications.</p>
-                    <p>Currently expanding into full-stack development with the MERN stack.</p>
+                <div className="max-w-3xl text-center mt-6 space-y-4">
+
+                    <p className="text-blue-400 uppercase tracking-[0.3em] text-sm font-semibold">
+                        FRONTEND DEVELOPER
+                    </p>
+
+                    <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+                        Frontend developer with <span className="text-white font-semibold">2+ years of experience </span>
+                        building enterprise React applications, reusable UI components and REST API integrations.
+                        Currently expanding into <span className="text-blue-400 font-semibold">MERN Stack </span>
+                        through backend development and full stack projects.
+                    </p>
+
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mt-6 w-full sm:w-auto">
-
+                    <a
+                        href="#projects"
+                        className="px-5 py-3 text-center bg-[#1A3263] text-white rounded-lg hover:bg-[#16264d] transition"
+                    >
+                        Projects
+                    </a>
                     <a
                         href="#contact"
-                        className="px-5 py-3 text-center bg-[#1A3263] text-white rounded-lg hover:bg-[#16264d] transition"
+
+                        className="px-5 py-3 text-center border border-[#1A3263] text-white rounded-lg hover:bg-[#1A3263] hover:text-white transition"
                     >
                         Get In Touch
                     </a>
 
-                    <a
-                        href="#projects"
-                        className="px-5 py-3 text-center border border-[#1A3263] text-[#1A3263] rounded-lg hover:bg-[#1A3263] hover:text-white transition"
-                    >
-                        Projects
-                    </a>
+
 
                 </div>
 
@@ -116,13 +182,15 @@ function MainContent() {
 
             <div id="skills" className="flex items-center my-10 w-full max-w-5xl scroll-mt-24 px-2">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Skills</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-white whitespace-nowrap"> <div className="text-slate-400 uppercase tracking-[0.3em] text-sm">
+                    Tech Stack
+                </div></div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
-            <div className="max-w-5xl w-full space-y-8">
+            <div className="max-w-5xl w-full space-y-5">
 
-                <SkillSection title="Frontend" skills={frontendSkills} color="hover:shadow-blue-200" font="text-[#5459AC]" />
+                <SkillSection title="Frontend" skills={frontendSkills} color="hover:shadow-blue-200" font="text-slate-300" />
 
                 <SkillSection title="Backend" skills={backendSkills} color="hover:shadow-[#EBD6FB]" font="text-[#52357B]" />
 
@@ -135,15 +203,15 @@ function MainContent() {
 
             <div id="experience" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Experience</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-slate-400 whitespace-nowrap">Experience</div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
             <div className="max-w-4xl w-full">
 
                 <div className="mb-8">
-                    <h3 className="text-xl font-bold text-[#1A3263]">LMG 8 Tech</h3>
-                    <p className="text-[#5459AC] font-medium">Front-End Developer</p>
+                    <h3 className="text-xl font-bold text-white">LMG 8 Tech</h3>
+                    <p className="text-slate-300 font-medium">Front-End Developer</p>
                     <p className="text-sm text-gray-500">Feb 2024 – Apr 2026</p>
                 </div>
 
@@ -163,17 +231,17 @@ function MainContent() {
 
                                 <div>
 
-                                    <h4 className="font-semibold text-[#1A3263] mb-2">
+                                    <h4 className="font-semibold text-white mb-2">
                                         {step.title}
                                     </h4>
 
-                                    <ul className="text-sm text-[#547792] space-y-1 mb-2">
+                                    <ul className="text-sm text-slate-400 space-y-1 mb-2">
                                         {step.points.map((p, i) => (
                                             <li key={i}>• {p}</li>
                                         ))}
                                     </ul>
 
-                                    <p className="text-xs text-[#5459AC]">
+                                    <p className="text-xs text-slate-300">
                                         {step.tech.join(" • ")}
                                     </p>
 
@@ -194,31 +262,22 @@ function MainContent() {
 
             <div id="projects" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Projects</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-slate-400 whitespace-nowrap">Projects</div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
             <div className="max-w-4xl w-full space-y-12">
 
-                {projectSections.map((section, index) => (
+                <div className="grid md:grid-cols-2 gap-8">
 
-                    <div key={index}>
+                    {projects.map((project, index) => (
+                        <ProjectCard
+                            key={index}
+                            {...project}
+                        />
+                    ))}
 
-                        <h2 className="text-lg font-semibold text-[#1A3263] mb-4">
-                            {section.title}
-                        </h2>
-
-                        <div className="grid md:grid-cols-2 gap-6">
-
-                            {section.projects.map((project, i) => (
-                                <ProjectCard key={i} {...project} />
-                            ))}
-
-                        </div>
-
-                    </div>
-
-                ))}
+                </div>
 
             </div>
 
@@ -227,26 +286,41 @@ function MainContent() {
 
             <div id="contact" className="flex items-center my-12 w-full max-w-4xl scroll-mt-24">
                 <div className="flex-grow border-t border-gray-400"></div>
-                <div className="mx-4 font-semibold text-lg sm:text-xl text-[#1A3263] whitespace-nowrap">Get In Touch</div>
+                <div className="mx-4 font-semibold text-lg sm:text-xl text-white whitespace-nowrap"><h2 className="text-3xl font-bold text-white">
+                    Let's Connect
+                </h2>
+
+                    <p className="text-slate-400 mt-3">
+                        I'm currently open to Frontend and MERN Stack opportunities.
+                        Feel free to reach out if you'd like to work together.
+                    </p></div>
                 <div className="flex-grow border-t border-gray-400"></div>
             </div>
 
             <div className="max-w-4xl w-full text-center space-y-6 pb-16">
 
-                <p className="text-[#547792]">
-                    I’m currently looking for frontend or full-stack developer opportunities. <br />
+                {/* <p className="text-slate-400">
+                    I’m currently looking for frontend or full stack developer opportunities. <br />
                     Feel free to reach out if you think I’d be a good fit for your team.
-                </p>
+                </p> */}
 
-                <div className="space-y-2 text-[#5459AC]">
+                <div className="space-y-2 text-slate-300">
 
-                    <p className="flex justify-center gap-2">
-                        📧 <span>vaninaravi07@gmail.com</span>
-                    </p>
+                    <a
+                        href="mailto:vaninaravi07@gmail.com"
+                        className="flex justify-center gap-2 text-slate-300 hover:text-cyan-400 transition"
+                    >
+                        📧
+                        <span>vaninaravi07@gmail.com</span>
+                    </a>
 
-                    <p className="flex justify-center gap-2">
-                        📱 <span>+91 9535621820</span>
-                    </p>
+                    <a
+                        href="tel:+919535621820"
+                        className="flex justify-center gap-2 text-slate-300 hover:text-cyan-400 transition"
+                    >
+                        📱
+                        <span>+91 9535621820</span>
+                    </a>
 
                 </div>
 
@@ -256,7 +330,7 @@ function MainContent() {
                         href="https://www.linkedin.com/in/vanishree6301/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1A3263] font-medium hover:text-blue-600 transition"
+                        className="text-white font-medium hover:text-blue-600 transition"
                     >
                         LinkedIn
                     </a>
@@ -265,7 +339,7 @@ function MainContent() {
                         href="https://github.com/vani-6301"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1A3263] font-medium hover:text-gray-600 transition"
+                        className="text-white font-medium hover:text-gray-600 transition"
                     >
                         GitHub
                     </a>
@@ -273,7 +347,7 @@ function MainContent() {
                     <a
                         href={resume}
                         download
-                        className="text-[#1A3263] font-medium hover:text-purple-600 transition"
+                        className="text-white font-medium hover:text-purple-600 transition"
                     >
                         Resume
                     </a>
@@ -297,11 +371,15 @@ function MainContent() {
 function SkillSection({ title, skills, color, font }) {
     return (
         <div>
-            <h3 className="text-lg font-bold text-[#1A3263] mb-4">{title}</h3>
+            <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
 
             <div className="flex flex-wrap gap-4">
                 {skills.map((skill, i) => (
-                    <SkillCard key={i} name={skill} color={color} font={font} />
+                    <SkillCard
+                        key={i}
+                        name={skill.name}
+                        icon={skill.icon}
+                    />
                 ))}
             </div>
         </div>
@@ -309,12 +387,23 @@ function SkillSection({ title, skills, color, font }) {
 }
 
 
-function SkillCard({ name, color, font }) {
+function SkillCard({ name, icon }) {
     return (
-        <div className={`px-5 py-3 bg-white rounded-xl border border-gray-200
-        shadow-sm cursor-pointer transition-all duration-300 ease-in-out
-        hover:-translate-y-1 hover:scale-105 hover:shadow-lg ${color} hover:font-bold`}>
-            <span className={`text-xs sm:text-sm font-medium ${font}`}>
+        <div className="
+            flex items-center gap-3
+            px-5 py-4
+            rounded-xl
+            bg-slate-900
+            border border-slate-700
+            hover:border-cyan-400
+            hover:-translate-y-1
+            transition-all duration-300
+        ">
+            <span className="text-2xl text-cyan-400">
+                {icon}
+            </span>
+
+            <span className="text-white font-medium">
                 {name}
             </span>
         </div>
@@ -322,33 +411,58 @@ function SkillCard({ name, color, font }) {
 }
 
 
-function ProjectCard({ title, tech, description, link }) {
+function ProjectCard({ title, tech, description }) {
     return (
-        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition duration-300">
+        <div className="
+            bg-slate-900
+            border
+            border-slate-700
+            rounded-2xl
+            p-6
+            hover:border-blue-500
+            hover:-translate-y-2
+            transition-all
+            duration-300
+        ">
 
-            <h3 className="text-[#2563eb] font-semibold mb-1">
+            {/* <div className="
+                h-40
+                rounded-xl
+                bg-slate-800
+                mb-5
+                flex
+                items-center
+                justify-center
+                text-slate-500
+            ">
+                Project Screenshot
+            </div> */}
+
+            <h3 className="text-2xl font-semibold text-white">
                 {title}
             </h3>
 
-            <p className="text-xs text-gray-500 mb-3">
-                {tech.join(", ")}
-            </p>
+            <div className="flex flex-wrap gap-2 mt-4 mb-5">
+                {tech.map((item) => (
+                    <span
+                        key={item}
+                        className="
+                            px-3
+                            py-1
+                            rounded-full
+                            bg-blue-500/10
+                            text-blue-400
+                            text-xs
+                        "
+                    >
+                        {item}
+                    </span>
+                ))}
+            </div>
 
-            <p className="text-sm text-[#547792] leading-relaxed">
+            <p className="text-slate-400 leading-7">
                 {description}
             </p>
-
-            {link && (
-                <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-4 text-blue-600 font-medium hover:underline"
-                >
-                    View Project →
-                </a>
-            )}
-
         </div>
     );
 }
